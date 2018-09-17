@@ -1,0 +1,122 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <title>CurveFusion: Reconstructing Thin Structures from RGBD Sequences</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta property="og:image" content=""/>
+<meta property="og:title" content="CurveFusion: Reconstructing Thin Structures from RGBD Sequences" />
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53682931-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<script type="text/javascript">
+// redefining default features
+var _POPUP_FEATURES = 'width=500,height=300,resizable=1,scrollbars=1,titlebar=1,status=1';
+</script>
+<link media="all" href="glab.css" type="text/css" rel="StyleSheet">
+<style type="text/css" media="all">
+IMG {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	FLOAT: right;
+	PADDING-BOTTOM: 0px;
+	PADDING-TOP: 0px
+}
+#primarycontent {
+	MARGIN-LEFT: auto; ; WIDTH: expression(document.body.clientWidth >
+1150? "1150px": "auto" ); MARGIN-RIGHT: auto; TEXT-ALIGN: left; max-width:
+1150px }
+BODY {
+	TEXT-ALIGN: center
+}
+</style>
+
+<body>
+
+<div id="primarycontent">
+<center><h1>CurveFusion: Reconstructing Thin Structures from RGBD Sequences</h1></center>
+
+<center><h2>
+  <a href="">LINGJIE LIU</a><sup>1,2</sup>&nbsp;&nbsp;
+  <a href="">NENGLUN CHEN<sup>1</sup>&nbsp;&nbsp;
+  <a href="http://www.duygu-ceylan.com/">DUYGU CEYLAN</a><sup>3</sup>&nbsp;&nbsp;
+  <a href="https://people.mpi-inf.mpg.de/~theobalt/">CHRISTIAN THEOBALT</a><sup>4</sup>&nbsp;&nbsp;
+  <a href="">WENPING WANG</a><sup>1</sup>&nbsp;&nbsp;
+  <a href="http://www0.cs.ucl.ac.uk/staff/n.mitra/index.html">NILOY J. MITRA</a><sup>2</sup></h2></center>
+
+<center><h2><sup>1</sup>University of Hong Kong&nbsp;&nbsp;<sup>2</sup>University College London&nbsp;&nbsp;<sup>3</sup>Adobe Research&nbsp;&nbsp;<sup>4</sup>Max Planck Institute for Informatics</h2></center>
+
+<br>
+<hr/>
+<br>
+<center><a href="images/teaser.jpg">
+<img style="PADDING-LEFT: 220px; PADDING-RIGHT: 220px;" src="images/teaser.jpg" width="720"> </a></center>
+
+<h2>Abstract</h2>
+<div style="font-size:14px"><p>We introduceCurveFusion, the first approach for high quality scanningof thin structures at interactive rates using a handheld RGBD camera. Thinfilament-like structures are mathematically just 1D curves embedded inR3,and integration-based reconstruction works best when depth sequences(from the thin structure parts) are fused using the object’s (unknown) curveskeleton. Thus, using the complementary but noisy color and depth channels,CurveFusionfirst automatically identifies point samples on potential thinstructures and groups them intobundles, each being a group of a fixed num-ber of aligned consecutive frames. Then, the algorithm extracts per-bundleskeleton curves using L1axes, and aligns and iteratively merges the L1seg-ments from all the bundles to form the final complete curve skeleton. Thus,unlike previous methods, reconstruction happens via integration along adata-dependent fusion primitive, i.e., the extracted curve skeleton. We exten-sively evaluateCurveFusionon a range of challenging examples, differentscanner and calibration settings, and present high fidelity thin structurereconstructions previously just not possible from raw RGBD sequences.</p></div>
+
+<a href="curvefusion.pdf"><img style="float: left; padding: 10px; PADDING-RIGHT: 30px;" alt="paper thumbnail" src="images/paper_thumbnail.jpg" width=170></a>
+<br>
+
+<h2>Paper</h2>
+<p><a href="curvefusion.pdf">CurveFusion</a>&nbsp;&nbsp;2018 </p>
+
+<br>
+
+<!--<h2>Citation</h2>
+<p>
+<a href="Bibtex.txt">Bibtex</a>
+
+</p>-->
+<br>
+<h2>Code: <a href="">Comming Soon</a></h2>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<hr/>
+<h1 align='center'>Demo</h1>
+<table align="center" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    <td align="center" valign="middle">
+    <p> <iframe width="1024" height="575" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
+   </td>
+    </tr>
+</table>
+<p>&nbsp;</p>
+
+
+<br>
+<h2>Acknowledgement</h2>
+<p>We thank our reviewers for their invaluable comments. We thankHui Huang, Amy Tabb and Zheng Wang for their great help with thetesting and validation of our work. We also thank Cheng Lin, JiataoGu, Maria Lam, Paul Guerrero for their help. This work was par-tially funded by the ERC Starting Grant SmartGeometry (StG-2013-335373), the Research Grant Council of Hong Kong (GRF 17210718),a Google Faculty award, a UCL visiting student program, and giftsfrom Adobe.</p>
+<br>
+<br>
+<br>
+<br>
+<!--<h2>Citation</h2>
+<p></p>-->
+
+<div style="display:none">
+<!-- GoStats JavaScript Based Code -->
+<script type="text/javascript" src="http://gostats.com/js/counter.js"></script>
+<script type="text/javascript">_gos='c3.gostats.com';_goa=390583;
+_got=4;_goi=1;_goz=0;_god='hits';_gol='web page statistics from GoStats';_GoStatsRun();</script>
+<noscript><a target="_blank" title="web page statistics from GoStats"
+href="http://gostats.com"><img alt="web page statistics from GoStats"
+src="http://c3.gostats.com/bin/count/a_390583/t_4/i_1/z_0/show_hits/counter.png"
+style="border-width:0" /></a></noscript>
+</div>
+<!-- End GoStats JavaScript Based Code -->
+</body></html>
