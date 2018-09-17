@@ -8,19 +8,19 @@ IMG {
 	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
 }
 H1 {
-	FONT-WEIGHT: normal
+	FONT-WEIGHT: normal;font-family: "Times New Roman", Times, serif;
 }
 H2 {
-	MARGIN-TOP: 10px; FONT-WEIGHT: normal;font-size: 18px; MARGIN-BOTTOM: 0px
+	MARGIN-TOP: 10px; FONT-WEIGHT: normal;font-size: 18px; MARGIN-BOTTOM: 0px;font-family: "Times New Roman", Times, serif;
 }
 H3 {
-	MARGIN-TOP: 6px; FONT-SIZE: small; MARGIN-BOTTOM: 0px
+	MARGIN-TOP: 6px; FONT-SIZE: small; MARGIN-BOTTOM: 0px;font-family: "Times New Roman", Times, serif;
 }
 P {
-	MARGIN-TOP: 0px; font-size: 15px
+	MARGIN-TOP: 0px; font-size: 15px;font-family: "Times New Roman", Times, serif;
 }
 A {
-	FONT-WEIGHT: bolder; TEXT-DECORATION: none
+	FONT-WEIGHT: bolder; TEXT-DECORATION: none;font-family: "Times New Roman", Times, serif;
 }
 A:link {
 	COLOR: #990000
