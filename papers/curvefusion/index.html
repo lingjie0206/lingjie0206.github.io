@@ -47,11 +47,11 @@ BODY {
 <center><h1>CurveFusion: Reconstructing Thin Structures from RGBD Sequences</h1></center>
 
 <center><h2>
-  <a href="">Lingjie Liu</a><sup>1,2*</sup>&nbsp;&nbsp;
+  <a href="https://i.cs.hku.hk/~ljliu/">Lingjie Liu</a><sup>1,2*</sup>&nbsp;&nbsp;
   <a href="">Nenglun Chen<sup>1*</sup>&nbsp;&nbsp;
   <a href="http://www.duygu-ceylan.com/">Duygu Ceylan</a><sup>3</sup>&nbsp;&nbsp;
   <a href="https://people.mpi-inf.mpg.de/~theobalt/">Christian Theobalt</a><sup>4</sup>&nbsp;&nbsp;
-  <a href="">Wenping Wang</a><sup>1</sup>&nbsp;&nbsp;
+  <a href="https://i.cs.hku.hk/~wenping/">Wenping Wang</a><sup>1</sup>&nbsp;&nbsp;
   <a href="http://www0.cs.ucl.ac.uk/staff/n.mitra/index.html">Niloy J. Mitra</a><sup>2</sup></h2></center>
 
 <center><h2><sup>1</sup>University of Hong Kong&nbsp;&nbsp;<sup>2</sup>University College London&nbsp;&nbsp;<sup>3</sup>Adobe Research&nbsp;&nbsp;<sup>4</sup>Max Planck Institute for Informatics</h2></center>
@@ -63,7 +63,7 @@ BODY {
 <img style="PADDING-LEFT: 220px; PADDING-RIGHT: 220px;" src="images/teaser.jpg" width="720"> </a></center>
 
 <h1>Abstract</h1>
-<div style="font-size:14px; text-align:justify;"><p>We introduceCurveFusion, the first approach for high quality scanningof thin structures at interactive rates using a handheld RGBD camera. Thinfilament-like structures are mathematically just 1D curves embedded inR3,and integration-based reconstruction works best when depth sequences(from the thin structure parts) are fused using the object&apos;s (unknown) curveskeleton. Thus, using the complementary but noisy color and depth channels,CurveFusionfirst automatically identifies point samples on potential thinstructures and groups them intobundles, each being a group of a fixed num-ber of aligned consecutive frames. Then, the algorithm extracts per-bundleskeleton curves using L1axes, and aligns and iteratively merges the L1seg-ments from all the bundles to form the final complete curve skeleton. Thus,unlike previous methods, reconstruction happens via integration along adata-dependent fusion primitive, i.e., the extracted curve skeleton. We exten-sively evaluateCurveFusionon a range of challenging examples, differentscanner and calibration settings, and present high fidelity thin structurereconstructions previously just not possible from raw RGBD sequences.</p></div>
+<div style="font-size:14px; text-align:justify;"><p>We introduce CurveFusion, the first approach for high quality scanning of thin structures at interactive rates using a handheld RGBD camera. Thin filament-like structures are mathematically just 1D curves embedded in R<sup>3</sup>,and integration-based reconstruction works best when depth sequences (from the thin structure parts) are fused using the object&apos;s (unknown) curve skeleton. Thus, using the complementary but noisy color and depth channels, CurveFusion first automatically identifies point samples on potential thin structures and groups them into bundles, each being a group of a fixed number of aligned consecutive frames. Then, the algorithm extracts per-bundle skeleton curves using L<sub>1</sub> axes, and aligns and iteratively merges the L<sub>1</sub>segments from all the bundles to form the final complete curve skeleton. Thus, unlike previous methods, reconstruction happens via integration along a data-dependent fusion primitive, i.e., the extracted curve skeleton. We extensively evaluate CurveFusion on a range of challenging examples, different scanner and calibration settings, and present high fidelity thin structure reconstructions previously just not possible from raw RGBD sequences.</p></div>
 
 <a href="curvefusion.pdf"><img style="float: left; padding: 10px; PADDING-RIGHT: 30px;" alt="paper thumbnail" src="images/paper_thumbnail.jpg" width=200></a>
 <br>
