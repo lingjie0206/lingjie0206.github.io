@@ -1832,7 +1832,11 @@ section {
   padding-left: 30px;
   padding-right: 30px;
 }
-
+#otherprojects .container {
+  margin-left: 30px;
+ padding-left: 30px;
+ padding-right: 30px;
+}
 hr, .border-color {
   border-color: #ebebeb;
 }
