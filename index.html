@@ -43,7 +43,6 @@
 		  $('.nav-toggle').click(function(){
 			//get collapse content selector
 			var collapse_content_selector = $(this).attr('href');
-
 			//make the collapse content to be shown or hide
 			var toggle_switch = $(this);
 			$(collapse_content_selector).toggle(speed="slow");
@@ -184,7 +183,7 @@
         <section id="news">
             <div class="container">
                 <div class="page-header space-left">
-                    <h3>Recent News.</h3>
+                    <h3>Recent News<span class="text-primary">.</span></h3>
 			<h6>[March 2019] "Neural Animation and Reenactment of Human Actor Videos" will be presented at SIGGRAPH 2019. </h6>
 			<h6>[Sept 2018] Check out a new <a href="https://shiropen.com/seamless/neural-animation-and-reenactment-of-human-actor-videos">media report</a> of our recent work "Neural Animation and Reenactment of Human Actor Videos" by Seamless. </h6>
 			<h6>[Sept 2018] Check our recent work "Neural Animation and Reenactment of Human Actor Videos". </h6>
@@ -204,7 +203,7 @@
             <div id="bibtex_display">
             <div class="container">
                 <div class="page-header space-left">
-                    <h3>Publications<span class="text-primary">.</span></h3>
+                    <h3><span class="text-primary">Publications.</span></h3>
                 </div>
                 <div class="timeline  border-color">
 				
@@ -322,16 +321,19 @@ Eprint = {arXiv:1809.03658},
 	<div style="width:1500px;height:1px;margin:0px auto;padding:1px;background-color:#D5D5D5;overflow:hidden;"></div>
 	
 	<!-- journal -->
-        <section id="otherprojects">
+        <section id="publications">
             <div id="bibtex_display">
             <div class="container">
                 <div class="page-header space-left">
-                    <h3>Other Projects<span class="text-primary">.</span></h3>
+                    <h3><span class="text-primary">Publications.</span></h3>
                 </div>
                 <div class="timeline  border-color">
 				
 			<div class="timeline-item">
                         <div class="row">
+                            <div class="col-md-3 timeline-info">
+                               <img src="images/body2body.png" alt="">
+                            </div><!-- / timeline-info -->
                             <div class="col-md-9 timeline-details">
                                 <h5>Neural Human Video Rendering: Joint Learning of Dynamic Textures and Rendering-to-Video Translation </h5>
                                 <p><a href="#home">Lingjie Liu</a>, <a href="http://people.mpi-inf.mpg.de/~wxu/">Weipeng Xu</a>, <a href="http://web.stanford.edu/~zollhoef/">Michael Zollhöfer</a>, <a href="http://people.mpi-inf.mpg.de/~fbernard/">Florian Bernard</a>, <a href="https://people.mpi-inf.mpg.de/~hyeongwoo/">Hyeongwoo Kim</a>, <a href="https://people.mpi-inf.mpg.de/~mhaberma/">Marc Habermann</a>, <a href="http://i.cs.hku.hk/~wenping/">Wenping Wang</a>, <a href="http://people.mpi-inf.mpg.de/~theobalt/">Christian Theobalt</a></p>
@@ -436,7 +438,7 @@ Eprint = {arXiv:1809.03658},
         <section id="education">
             <div class="container">
                 <div class="page-header" style="text-indent:-0.5em;">
-                    <h3>Education<span class="text-primary">.</span></h3>
+                    <h3><span class="text-primary">Education.</span></h3>
                 </div>
                 <div class="timeline  border-color">
 			<div class="timeline-item">
@@ -782,7 +784,6 @@ Eprint = {arXiv:1809.03658},
       $("#Fontselector").on("change",function() {
         var font = $("#Fontselector option:selected").text();
         console.log(font);
-
         $('.title.fonters').each(function() {
             $(this).css("font-family",font);
         });
@@ -797,7 +798,6 @@ Eprint = {arXiv:1809.03658},
         $("#searchbar").trigger('change');
     }
 </script>
-
 <style>
     html,body,span,h1 {
         font-family: "Times New Roman", Times, serif;
@@ -809,7 +809,6 @@ Eprint = {arXiv:1809.03658},
     h1.header {margin-left:8px;}
     h1.YEAR { font-size: 17px; font-weight: bold; display: inline; margin-left:8px;}
 </style>
-
 -->
 
 <!-- menu toggle script -->
@@ -862,7 +861,6 @@ $(".nav a").on("click", function(){
         itemsDesktop : [1099,3],
         itemsDesktopSmall : [979,3]
       });
-
     });
 </script>
 <script src="js/owl.carousel.min.js"></script>
@@ -873,7 +871,6 @@ $(".nav a").on("click", function(){
         itemsDesktop : [1099,3],
         itemsDesktopSmall : [979,3]
       });
-
     });
 </script>
 <!-- / posts carousel -->
