@@ -1,0 +1,320 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>Neural Actor: Neural Free-view Synthesis of Human Actors with Pose Control </title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+	<!-- Meta tags for Zotero grab citation -->
+	<meta name="citation_title" content="Neural Actor">
+	<meta name="citation_author" content="Liu, Lingjie">
+	<meta name="citation_author" content="Habermann, Marc">
+	<meta name="citation_author" content="Rudnev, Viktor">
+	<meta name="citation_author" content="Sarkar, Kripasindhu">
+	<meta name="citation_author" content="Gu, Jiatao">
+	<meta name="citation_author" content="Theobalt, Christian">
+	<meta name="citation_publication_date" content="2021">
+	<meta name="citation_conference_title" content="Arxiv">
+	<!-- <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2007.11571.pdf"> -->
+
+	<meta name="robots" content="index,follow">
+	<meta name="description"
+		content="
+		We propose Neural Actor (NA), a new method for high-quality synthesis of humans from arbitrary viewpoints and under arbitrary controllable poses. Our method is built upon recent neural scene representation and rendering works which learn  representations of geometry and appearance from only 2D images. While existing works demonstrated compelling  rendering of static scenes and playback of dynamic scenes, photo-realistic reconstruction and rendering of humans with neural implicit methods, in particular under user-controlled novel poses, is still difficult. To address this problem, we utilize a coarse body model as the proxy to unwarp the surrounding 3D space into a canonical pose. A neural radiance field learns pose-dependent geometric deformations and pose- and view-dependent appearance effects in the canonical space from multi-view video input. To synthesize novel views of high fidelity dynamic geometry and appearance, we leverage 2D texture maps defined on the body model as latent variables for predicting residual deformations and the dynamic appearance. Experiments demonstrate that our method achieves better quality than the state-of-the-arts on playback as well as novel pose synthesis, and can even generalize well to new poses that starkly differ from the training poses. Furthermore, our method also supports body shape control on the synthesized results.">
+	<link rel="author" href="https://lingjie0206.github.io/" />
+
+
+	<!-- Fonts and stuff -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800'
+		rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/project.css" media="screen" />
+	<link rel="stylesheet" type="text/css" media="screen" href="css/iconize.css" />
+	<script src="js/google-code-prettify/prettify.js"></script>
+</head>
+
+<body>
+	<div id="content">
+		<div id="content-inner">
+			<div class="section logos" style="text-align:center">
+				<a href="http://www.mpi-inf.mpg.de/home/" target="_blank"><IMG src="./logos/Logo_MPII.png" height="35"
+						border="0"></a></td>
+				<a href="/index.html" target="_blank"><IMG src="./logos/Logo_gvv.png" height="35" border="0"></a></td>
+				<a href="https://ai.facebook.com/" target="_blank"><IMG src="./logos/fair_logo.png" height="35"="0"></a>
+				</td>
+			</div>
+
+			<div class="section head">
+
+				<h1>Neural Actor: Neural Free-view Synthesis of Human Actors with Pose Control</h1>
+
+				<div class="authors">
+					<a href="https://lingjie0206.github.io/" target="_blank">Lingjie Liu</a><sup> 1</sup>&#160;&#160;
+					<a href="https://people.mpi-inf.mpg.de/~mhaberma/" target="_blank">Marc Habermann</a><sup> 1</sup>&#160;&#160;
+					<a href="https://people.mpi-inf.mpg.de/~vrudnev/" target="_blank">Viktor Rudnev</a><sup> 1</sup>&#160;&#160;
+					<a href="https://people.mpi-inf.mpg.de/~ksarkar/">Kripasindhu Sarkar</a><sup> 1</sup>&#160;&#160;
+					<a href="http://jiataogu.me/" target="_blank">Jiatao Gu</a><sup> 2</sup>&#160;&#160;
+					<a href="http://people.mpi-inf.mpg.de/~theobalt/" target="_blank">Christian Theobalt</a><sup>1</sup>&#160;&#160;
+				</div>
+
+				<div class="affiliations">
+					<sup>1</sup><a href="http://www.mpi-inf.mpg.de/home/" target="_blank">MPI Informatics, Saarland
+						Informatics Campus</a>&#160;&#160;
+					<sup>2</sup><a href="https://ai.facebook.com/" target="_blank">Facebook AI Research</a>&#160;&#160;
+				</div>
+				<div class="venue">SIGGRAPH Asia 2021</div>
+
+				<div class="section downloads">
+					<!--<h2>Downloads</h2>-->
+					<center>
+						<ul>
+							<li class="grid">
+								<div class="griditem">
+									<a href="https://arxiv.org/abs/2106.02019" target="_blank"
+										class="imageLink"><img src="images/pdf.png"></a><br />
+										<a href="https://arxiv.org/abs/2106.02019" target="_blank">Paper</a>
+								</div>
+							</li>
+							<li class="grid">
+								<div class="griditem">
+									<a href="https://people.mpi-inf.mpg.de/~lliu/projects/NeuralActor/" target="_blank"
+										class="imageLink"><img src="images/data_ico.png"></a><br />
+									<a href="https://github.com/lingjie0206/Neural_Actor_Main_Code"> Code & Data </a>
+
+								</div>
+							</li>
+							<!-- <li class="grid">
+								<div class="griditem">
+									<a href="https://www.dropbox.com/s/sqsnl07fpfhwge2/nips_talk_10m_V3.pptm?dl=0"
+										target="_blank" class="imageLink"><img
+											src="images/nips_talk_10m_V3.png"></a><br />
+									 <a href="https://www.dropbox.com/s/sqsnl07fpfhwge2/nips_talk_10m_V3.pptm?dl=0">
+										Slides (160 MB)</a> 
+
+								</div>
+							</li>-->
+						</ul>
+					</center>
+				</div>
+			</div>
+
+
+
+
+			<div class="section abstract">
+				<h2>Abstract</h2><br>
+				<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="images/first_img.png" style="width:90%; margin-bottom:20px">
+
+					</div>
+
+				</div>
+				<p>
+					We propose Neural Actor (NA), a new method for high-quality synthesis of humans from arbitrary viewpoints and under arbitrary controllable poses. Our method is built upon recent neural scene representation and rendering works which learn  representations of geometry and appearance from only 2D images. While existing works demonstrated compelling  rendering of static scenes and playback of dynamic scenes, photo-realistic reconstruction and rendering of humans with neural implicit methods, in particular under user-controlled novel poses, is still difficult. To address this problem, we utilize a coarse body model as the proxy to unwarp the surrounding 3D space into a canonical pose. A neural radiance field learns pose-dependent geometric deformations and pose- and view-dependent appearance effects in the canonical space from multi-view video input. To synthesize novel views of high fidelity dynamic geometry and appearance, we leverage 2D texture maps defined on the body model as latent variables for predicting residual deformations and the dynamic appearance. Experiments demonstrate that our method achieves better quality than the state-of-the-arts on playback as well as novel pose synthesis, and can even generalize well to new poses that starkly differ from the training poses. Furthermore, our method also supports body shape control of the synthesized results. </p>
+				</p>
+			</div>
+
+			<div class="section abstract">
+				<h2>Full Video</h2><br>
+				<center>
+					<iframe width="640" height="360" src="mp4/main_video_arxiv3.mp4" frameborder="0"; encrypted-media" allowfullscreen></iframe> 
+					<!-- <iframe width="640" height="360" src="https://www.youtube.com/embed/RFqPwH7QFEI" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>-->
+					<!--iframe src="./data/video.mp4" allow="autoplay; encrypted-media" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" width="560" height="315" frameborder="0"></iframe-->
+					<!--<p style="font-size:11px; text-align:center">
+					Download Video: <a href="data/video.mp4" target="_blank">HD</a> (MP4, 111 MB)
+				</p>-->
+				</center>
+			</div>
+
+			<div class="section abstract">
+				<h2>Introduction</h2>
+				
+				<center>
+					<!-- <iframe width="640" height="360" src="./mp4/composite3.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+					<video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+						<source src="mp4/intro.mp4" type="video/mp4">
+					</video>
+				</center>
+				<p>We present Neural Actor, a new method for free-view synthesis of human actors which allows arbitrary pose control. Given a sequence of driving poses as well as a virtual camera as input, our method can synthesize realistic animations of the actor with pose- and view-dependent dynamic appearance, sharp features and high-fidelity winkle patterns. We can freely change the viewpoint for rendering. </p>
+
+				<center>
+					<!-- <iframe width="640" height="360" src="./mp4/composite3.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+					<video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+						<source src="mp4/aist_1.mp4" type="video/mp4">
+					</video>
+				</center>
+
+				<center>
+					<!--<iframe width="640" height="360" src="mp4/aist_8.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+					<video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+						<source src="mp4/aist_8.mp4" type="video/mp4">
+					</video>
+				</center>
+				<p>Neural Actor generalizes well to unseen poses which starkly differ from the ones in the training. Here, we show a challenging dancing performance from the AIST dataset, which was not seen during training. Note that our method also generalizes well to novel views. 
+				</p>
+
+				<center>
+					<!-- <iframe width="640" height="360" src="./mp4/composite3.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+					<video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+						<source src="mp4/aist_multi.mp4" type="video/mp4">
+					</video>
+				</center>
+				<p>Since our method only requires a skeletal pose, we can apply the same pose to different people allowing effects like synchronous crowd dancing. 
+				</p>
+				
+				<center>
+					<!-- <iframe width="640" height="360" src="./mp4/composite3.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+					<video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+						<source src="mp4/reshape_1.mp4" type="video/mp4">
+					</video>
+					<video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+						<source src="mp4/reshape_2.mp4" type="video/mp4">
+					</video>
+				</center>
+				<p>We can also control the body shape of the synthesized human actors. 
+				</p>
+			</div>
+
+
+			<div class="section abstract">
+				<h2>Method</h2><br>
+				<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="images/pipeline.png" style="width:90%; margin-bottom:20px">
+
+					</div>
+
+				</div>
+				<p>
+					Given a pose, we synthesize images by sampling points along camera rays near the posed SMPL mesh. For each sampled point $x$, we assign to it the skinning weights of its nearest surface point and predict a residual deformation to transform $x$ to the canonical space. We then learn the radiance field in the canonical pose space to predict the color and density for $x$ using multi-view 2D supervision. The pose-dependent residual deformation and color are predicted from the local coordinate of $x$ along with the latent variables extracted from a 2D texture map of the nearest surface point of $x$. At training time, we use the ground truth texture map generated from multi-view training images to extract latent variables. At test time, the texture map is predicted from the normal map, which is extracted from the posed SMPL mesh via an image translation network, which is trained separately with the ground truth texture map as supervision. 
+				</p>
+			</div>
+			
+			
+			<div class="section abstract">
+				<h2>More Reenactment Results</h2>
+				<center>
+					<iframe width="640" height="360" src="mp4/deepcap_3.mp4" frameborder="0"; encrypted-media" allowfullscreen></iframe> 
+					<!-- <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+						<source src="mp4/deepcap_3.mp4" type="video/mp4">
+					</video>-->
+				</center>
+
+				<center>
+					 <iframe width="640" height="360" src="mp4/deepcap_1.mp4" frameborder="0"; encrypted-media" allowfullscreen></iframe>
+					<!-- <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+						<source src="mp4/deepcap_1.mp4" type="video/mp4">
+					</video>-->
+				</center>
+
+				<center>
+					<iframe width="640" height="360" src="mp4/deepcap_2.mp4" frameborder="0"; encrypted-media" allowfullscreen></iframe> 
+					<!-- <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+						<source src="mp4/deepcap_2.mp4" type="video/mp4">
+					</video>-->
+				</center>
+
+			
+				<center>
+					<iframe width="640" height="360" src="mp4/deepcap_multi.mp4" frameborder="0"; encrypted-media" allowfullscreen></iframe> 
+					<!-- <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+						<source src="mp4/deepcap_2.mp4" type="video/mp4">
+					</video>-->
+				</center>
+
+				<center>
+					<iframe width="640" height="360" src="mp4/aist_2.mp4" frameborder="0"; encrypted-media" allowfullscreen></iframe> 
+					<!--<video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+						<source src="mp4/aist_2.mp4" type="video/mp4">
+					</video> -->
+				</center>
+
+				<center>
+					 <iframe width="640" height="360" src="mp4/aist_3.mp4" frameborder="0"; encrypted-media" allowfullscreen></iframe> 
+					<!--<video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+						<source src="mp4/aist_3.mp4" type="video/mp4">
+					</video>-->
+				</center>
+
+				<center>
+					<iframe width="640" height="360" src="mp4/aist_4.mp4" frameborder="0"; encrypted-media" allowfullscreen></iframe> 
+					<!-- <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+						<source src="mp4/aist_4.mp4" type="video/mp4">
+					</video>-->
+				</center>
+
+				<center>
+					<iframe width="640" height="360" src="mp4/aist_5.mp4" frameborder="0"; encrypted-media" allowfullscreen></iframe> 
+					<!--<video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+						<source src="mp4/aist_5.mp4" type="video/mp4">
+					</video>-->
+				</center>
+
+				<center>
+					<iframe width="640" height="360" src="mp4/aist_6.mp4" frameborder="0"; encrypted-media" allowfullscreen></iframe> 
+					<!--<video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+						<source src="mp4/aist_6.mp4" type="video/mp4">
+					</video>-->
+				</center>
+
+				<center>
+					<iframe width="640" height="360" src="mp4/aist_7.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> 
+					<!--<video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+						<source src="mp4/aist_6.mp4" type="video/mp4">
+					</video>-->
+				</center>
+
+			
+
+			
+
+			<div class="section abstract">
+				<h2>Citation</h2>
+				<div class="section bibtex" style="text-align:left; margin-left: 40px; margin-right: 40px">
+					<pre>
+@article{liu2021neural,
+      title={Neural Actor: Neural Free-view Synthesis of Human Actors with Pose Control}, 
+      author={Lingjie Liu and Marc Habermann and Viktor Rudnev and Kripasindhu Sarkar and Jiatao Gu and Christian Theobalt},
+      year={2021},
+      journal = {ACM Trans. Graph.(ACM SIGGRAPH Asia)}
+}
+
+				</div>
+			</div>
+
+
+			<!--div class="section acknowledgments">
+				<h2>Acknowledgments</h2>
+				<p>
+					This work was funded by the ERC Consolidator Grant 4DRepLy (770784).
+				</p>
+			</div-->
+			
+			<!--<div class="section acknowledgments">
+				<h2>Useful Links</h2>
+				<p>
+					<a href="https://www.bilibili.com/video/BV1e7411c7kR?p=52">Talk (in Chinese) at GAMES Webinar</a>
+					<a href="http://irc.cs.sdu.edu.cn/2020-summer-school/video/7.18%20pm%20Lingjie%20Liu.mp4
+				</p>
+			</div-->
+
+			<div class="section">
+				<hr class="smooth">
+				This page is <a href="http://www.zotero.org" target="_blank">Zotero</a> translator friendly. Page last updated 
+				<script type="text/javascript">
+					var m = "This page was last updated: " + document.lastModified;
+					var p = m.length - 9;
+					document.writeln("<left>");
+					document.write(m.substring(p, 0) + ".");
+					document.writeln("</left>");
+				</script>
+				<a href="https://www.mpi-inf.mpg.de/imprint/">Imprint</a>. <a href="https://data-protection.mpi-klsb.mpg.de/inf/gvv.mpi-inf.mpg.de/projects/">Data Protection</a>.
+			</div>
+		</div>
+	</div>
+</body>
+</html>
