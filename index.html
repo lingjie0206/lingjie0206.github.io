@@ -45,7 +45,25 @@
                 var collapse_content_selector = $(this).attr('href');
                 //make the collapse content to be shown or hide
                 var toggle_switch = $(this);
-                $(collapse_content_selector).toggle(speed = "slow");
+                
+                // Toggle the content
+                $(collapse_content_selector).toggle(speed = "slow", function() {
+                    // Update the appropriate toggle icon after animation completes
+                    if (collapse_content_selector === '#alumni-collapse') {
+                        if ($(collapse_content_selector).is(':visible')) {
+                            $('#alumni-toggle-icon').text('▲');
+                        } else {
+                            $('#alumni-toggle-icon').text('▼');
+                        }
+                    } else if (collapse_content_selector === '#workshops-collapse') {
+                        if ($(collapse_content_selector).is(':visible')) {
+                            $('#workshops-toggle-icon').text('▲');
+                        } else {
+                            $('#workshops-toggle-icon').text('▼');
+                        }
+                    }
+                });
+                
                 return false;
             });
         });
@@ -278,19 +296,21 @@
 		
 		
 		    <br>
-			<h5>Alumni:</h5>	
-			<h6> <li><a href="https://czzzzh.github.io/">Chuhao Chen (Intern of 2025, from UCSD)</a> -> now PhD at UPenn</li></h6>
-			<h6> <li><a href="https://scholar.google.com/citations?user=SfQ5bSQAAAAJ&hl=en">Qingxuan Wu (Master of 2025)</a> -> now Machine Learning Engineer at Bytedance</li></h6>
-			<h6> <li><a href="https://github.com/mengxuyiGit">Xuyi Meng (Master of 2025)</a> -> now PhD at Cornell</li></h6>
-			<h6> <li><a href="https://scholar.google.com/citations?user=Ulg4gT4AAAAJ&hl=en">Heguang Lin (Master of 2025)</a> -> now PhD at Scripps Research</li></h6>
-			<h6> <li><a href="https://han-xiangyu.github.io/">Xiangyu Han (Master of 2025)</a> -> now PhD at SJTU </li></h6>
-			<h6> <li><a href="https://timsong412.github.io/">Yunzhou Song (Master of 2025)</a> -> now PhD at UPenn</li></h6>
-			<h6> <li><a href="https://linzhanm.github.io/">Linzhan Mou (Master of 2025)</a> -> now PhD at Princeton</li></h6>
-			<h6> <li><a href="https://frank-zy-dou.github.io/">Zhiyang Dou (Visiting Student of 2025, from HKU)</a> -> now PhD at MIT</li></h6>
-			<h6> <li><a href="https://chen3110.github.io/">Anjun Chen (Visiting Student of 2025, from Zhejiang University)</a> -> now Assistant Professor at Xiamen University</li></h6>
-			<h6> <li><a href="https://github.com/Michaelszj">Tingyang Zhang (Intern of 2024, from Peking University)</a> -> now Researcher at Mihoyo</li></h6>
-			<h6> <li><a href="https://zhanglbthu.github.io/">Libo Zhang (Intern of 2024, from Tsinghua University)</a> -> now PhD at Tsinghua Univesity</li></h6>
-			<h6> <li><a href="https://yh2371.github.io/">Yiming Huang (Master of 2024)</a> -> now PhD at UPenn</li></h6>
+			<h5><a href="#alumni-collapse" class="nav-toggle" style="color: inherit; text-decoration: none;">Alumni: <span id="alumni-toggle-icon">▼</span> (expand for details)</a></h5>
+			<div id="alumni-collapse" style="display: none;">
+				<h6> <li><a href="https://czzzzh.github.io/">Chuhao Chen (Intern of 2025, from UCSD)</a> -> now PhD at UPenn</li></h6>
+				<h6> <li><a href="https://scholar.google.com/citations?user=SfQ5bSQAAAAJ&hl=en">Qingxuan Wu (Master of 2025)</a> -> now Machine Learning Engineer at Bytedance</li></h6>
+				<h6> <li><a href="https://github.com/mengxuyiGit">Xuyi Meng (Master of 2025)</a> -> now PhD at Cornell</li></h6>
+				<h6> <li><a href="https://scholar.google.com/citations?user=Ulg4gT4AAAAJ&hl=en">Heguang Lin (Master of 2025)</a> -> now PhD at Scripps Research</li></h6>
+				<h6> <li><a href="https://han-xiangyu.github.io/">Xiangyu Han (Master of 2025)</a> -> now PhD at SJTU </li></h6>
+				<h6> <li><a href="https://timsong412.github.io/">Yunzhou Song (Master of 2025)</a> -> now PhD at UPenn</li></h6>
+				<h6> <li><a href="https://linzhanm.github.io/">Linzhan Mou (Master of 2025)</a> -> now PhD at Princeton</li></h6>
+				<h6> <li><a href="https://frank-zy-dou.github.io/">Zhiyang Dou (Visiting Student of 2025, from HKU)</a> -> now PhD at MIT</li></h6>
+				<h6> <li><a href="https://chen3110.github.io/">Anjun Chen (Visiting Student of 2025, from Zhejiang University)</a> -> now Assistant Professor at Xiamen University</li></h6>
+				<h6> <li><a href="https://github.com/Michaelszj">Tingyang Zhang (Intern of 2024, from Peking University)</a> -> now Researcher at Mihoyo</li></h6>
+				<h6> <li><a href="https://zhanglbthu.github.io/">Libo Zhang (Intern of 2024, from Tsinghua University)</a> -> now PhD at Tsinghua Univesity</li></h6>
+				<h6> <li><a href="https://yh2371.github.io/">Yiming Huang (Master of 2024)</a> -> now PhD at UPenn</li></h6>
+			</div>
 		</li></h6>			
 	</section>
 <br>
@@ -301,7 +321,7 @@
     <section id="activities">
         <div class="container">
             <div class="page-header" style="text-indent:-0.5em;">
-                <h3>Professional Service.</h3>
+                <h3>Professional Activities.</h3>
             </div>		
 			<h6> <i>Associate Editorship:</i></h6>
 			<h6><li>IEEE TVCG (2023 - present)</li></h6>
@@ -323,6 +343,48 @@
 			<h6><li>3DV 2024 </li></h6>
 
 			<br>
+			
+			<h5><a href="#workshops-collapse" class="nav-toggle" style="color: inherit; text-decoration: none;">Workshops, Tutorials, and Invited Talks: <span id="workshops-toggle-icon">▼</span> (expand for details)</a></h5>
+			<div id="workshops-collapse" style="display: none;">
+				<h6> <i>Organizers:</i></h6>
+				<h6><li><a href="https://3dmogen.github.io/"> Tutorial on Human Motion Generation</a>, ICCV'25</li></h6>
+				<h6><li><a href="https://3d-in-the-wild.github.io/"> Workshop on Wild3D: 3D Modeling, Reconstruction, and Generation in the Wild</a>, ICCV'25</li></h6>
+				<h6><li><a href="https://s3dsgr.github.io/"> Workshop on Scalable 3D Scene Generation and Geometric Scene Understanding</a>, ICCV'25</li></h6>
+				<h6><li><a href="https://www.projectaria.com/events/CVPR2025/DTC_workshop/"> Workshop on 3D Digital Twin: Progress, Challenges, and Future Directions</a>, CVPR'25</li></h6>
+				<h6><li><a href="https://ind3dworkshop.github.io/cvpr2025/"> Workshop on Ind3D: Enforcing Inductive Bias in 3D Generation</a>, CVPR'25 </li></h6>
+				<h6><li><a href="https://neural-bcc.github.io/"> Workshop on Neural Fields Beyond Conventional Cameras</a>, CVPR'25 </li></h6>
+				<h6><li><a href="https://ai4cc.net/"> Workshop on  AI for Content Creation workshop</a>, CVPR'25 </li></h6>
+				
+				<h6><li><a href="https://neural-fields-beyond-cams.github.io/"> Workshop on Neural Fields Beyond Conventional Cameras</a>, ECCV'24  </li></h6>
+				<h6><li><a href="https://3d-in-the-wild.github.io/"> Workshop on Wild 3D: 3D Modeling, Reconstruction, and Generation in the Wild</a>, ECCV'24 </li></h6>
+				<h6><li><a href="https://generative-vision.github.io/workshop-CVPR-24/"> Workshop on Generative Models for Computer Vision</a>, CVPR'24  </li></h6>
+				<h6><li><a href="https://ai4cc.net/"> Workshop on AI for Content Creation Workshop</a>, CVPR'24 </li></h6>
+				
+				<h6><li><a href="https://generative-vision.github.io/workshop-CVPR-23/"> Workshop on Generative Models for Computer Vision</a>, CVPR'23  </li></h6>
+				<h6><li><a href="https://ai4cc.net/"> Workshop on AI for Content Creation Workshop</a>, CVPR'23 </li></h6>
+				<h6><li><a href="https://www.birs.ca/events/2023/5-day-workshops/23w5153"> Workshop on 3D Generative Models</a>, Banff International Research Station for Mathematical Innovation and Discovery (BIRS)'23 </li></h6>		
+
+				<br>
+				<h6> <i>Courses:</i></h6>
+				<h6> <li>Neural Actor: Neural Free-view Synthesis of Human Actors with Pose Control, <a href="https://3dv2021.surrey.ac.uk/tutorials/#Tutorial2"> Tutorial in 3DV 2021 Course on Advances in Neural Rendering </a>.</li></h6>
+				<h6> <li>Fast Rendering of Neural Radiance Fields, <a href="https://www.neuralrender.com/"> Tutorial in SIGGRAPH 2021 Course on Advances in Neural Rendering </a>.</h6>
+				
+				<br>
+				
+				<h6> <i>Selected Invited Talks:</i></h6>
+				<h6> <li>Towards Next-Gen 3D Reconstruction and Generation: From Visual Fidelity to Multimodal and Physical Understanding, <a href="https://real2simworkshop.github.io/">CVPR'25 Workshop on Real-to-Sim: Bridging the Gap between Neural Rendering and Robot Learning</a>.</li></h6>
+				<h6> <li>Towards Next-Gen 3D Reconstruction and Generation: From Visual Fidelity to Multimodal and Physical Understanding, <a href="https://robotics-talks.com/archive/2025-spring">ETH Robotics, Vision, and Controls Talk Series</a>.</li></h6>
+				<h6> <li>High-Fidelity Human Pose Tracking and Realistic Motion Synthesis in Real-World Scenes, <a href="https://sgmig.hosting.acm.org/mig-2024/">Keynote at ACM MIG'24</a>.</li></h6>
+				<h6> <li>Human Pose Tracking and Controllable Motion Generation, <a href="https://s3dsgr.github.io/">ECCV'24 workshop on Scalable 3D Scene Generation and Geometric Scene Understanding</a>.</li></h6>
+				<h6> <li>Efficient Creation of Photo-realistic Controllable Human Characters, <a href="https://nvvw.github.io/">CVPR'24 workshop on The 1st Workshop on Neural Volumetric Video</a>.</li></h6>
+				<h6> <li>Tracking and Segmentation for Non-Static Scene Reconstruction, <a href="https://kaldir.vc.in.tum.de/scannetpp/cvpr2024">CVPR'24 Workshop on ScanNet++ </a>.</li></h6>
+				<h6> <li>Generalized 3D Reconstruction, <a href="https://sites.google.com/view/xrnerf/">CVPR'24 Workshop on XRNeRF: Second Workshop on Advances in Radiance Fields for the Metaverse</a>.</li></h6>
+				<h6> <li>Generalized 3D Reconstruction, <a href="https://3dvconf.github.io/2024/schedule/">Keynote at 3DV 2024</a> <a href="https://www.youtube.com/live/5B260Bd9Hkg?si=emG4Gnf675vT_nmG&t=590">[Recording]</a>.</li></h6>
+				<h6> <li>Reconstruction of 3D Real-world Scenes, <a href="https://neural-fields.xyz/">ICCV'23 Workshop on NeRF4ADR: Neural Fields for Autonomous Driving and Robotics</a>.</li></h6>
+				<h6> <li>Neural Representations of 3D Real-world Scenes, <a href="https://sites.google.com/view/ropem/">IROS'23 Workshop on Robotic Perception and Mapping</a>.</li></h6>
+				<h6> <li>Neural Representation and Neural Rendering of 3D Real-world Scenes, Toronto Geometry Colloquium <a href="https://www.youtube.com/live/i9KSa8DX56E?feature=share">[Recording]</a>.</li></h6>
+				<h6> <li>New Methods for Reconstruction and Rendering of 3D Real-world Scenes, GAMES Webinar <a href="https://www.bilibili.com/video/BV1NP411M7zq/">[Recording (Chinese)]</a>.</li></h6>
+			</div>
 			
     </section>
 
@@ -2298,55 +2360,6 @@
 
 	
 
-
-	<section id="activities">
-        <div class="container">
-            <div class="page-header" style="text-indent:-0.5em;">
-                <h3>Activities (Workshops, Tutorials, and Invited Talks).</h3>
-            </div>
-			
-			<h5>Organizers:</h5>
-			<h6><li><a href="https://3dmogen.github.io/"> Tutorial on Human Motion Generation</a>, ICCV'25</li></h6>
-			<h6><li><a href="https://3d-in-the-wild.github.io/"> Workshop on Wild3D: 3D Modeling, Reconstruction, and Generation in the Wild</a>, ICCV'25</li></h6>
-			<h6><li><a href="https://s3dsgr.github.io/"> Workshop on Scalable 3D Scene Generation and Geometric Scene Understanding</a>, ICCV'25</li></h6>
-			<h6><li><a href="https://www.projectaria.com/events/CVPR2025/DTC_workshop/"> Workshop on 3D Digital Twin: Progress, Challenges, and Future Directions</a>, CVPR'25</li></h6>
-			<h6><li><a href="https://ind3dworkshop.github.io/cvpr2025/"> Workshop on Ind3D: Enforcing Inductive Bias in 3D Generation</a>, CVPR'25 </li></h6>
-			<h6><li><a href="https://neural-bcc.github.io/"> Workshop on Neural Fields Beyond Conventional Cameras</a>, CVPR'25 </li></h6>
-			<h6><li><a href="https://ai4cc.net/"> Workshop on  AI for Content Creation workshop</a>, CVPR'25 </li></h6>
-			
-            <h6><li><a href="https://neural-fields-beyond-cams.github.io/"> Workshop on Neural Fields Beyond Conventional Cameras</a>, ECCV'24  </li></h6>
-			<h6><li><a href="https://3d-in-the-wild.github.io/"> Workshop on Wild 3D: 3D Modeling, Reconstruction, and Generation in the Wild</a>, ECCV'24 </li></h6>
-            <h6><li><a href="https://generative-vision.github.io/workshop-CVPR-24/"> Workshop on Generative Models for Computer Vision</a>, CVPR'24  </li></h6>
-			<h6><li><a href="https://ai4cc.net/"> Workshop on AI for Content Creation Workshop</a>, CVPR'24 </li></h6>
-			
-            <h6><li><a href="https://generative-vision.github.io/workshop-CVPR-23/"> Workshop on Generative Models for Computer Vision</a>, CVPR'23  </li></h6>
-			<h6><li><a href="https://ai4cc.net/"> Workshop on AI for Content Creation Workshop</a>, CVPR'23 </li></h6>
-			<h6><li><a href="https://www.birs.ca/events/2023/5-day-workshops/23w5153"> Workshop on 3D Generative Models</a>, Banff International Research Station for Mathematical Innovation and Discovery (BIRS)'23 </li></h6>		
-
-            <br>
-			<h5>Courses:</h5>
-			<h6> <li>Neural Actor: Neural Free-view Synthesis of Human Actors with Pose Control, <a href="https://3dv2021.surrey.ac.uk/tutorials/#Tutorial2"> Tutorial in 3DV 2021 Course on Advances in Neural Rendering </a>.</li></h6>
-			<h6> <li>Fast Rendering of Neural Radiance Fields, <a href="https://www.neuralrender.com/"> Tutorial in SIGGRAPH 2021 Course on Advances in Neural Rendering </a>.</h6>
-			
-			<br>
-			
-			<h5>Selected Invited Talks:</h5>
-			<h6> <li>Towards Next-Gen 3D Reconstruction and Generation: From Visual Fidelity to Multimodal and Physical Understanding, <a href="https://real2simworkshop.github.io/">CVPR'25 Workshop on Real-to-Sim: Bridging the Gap between Neural Rendering and Robot Learning</a>.</li></h6>
-			<h6> <li>Towards Next-Gen 3D Reconstruction and Generation: From Visual Fidelity to Multimodal and Physical Understanding, <a href="https://robotics-talks.com/archive/2025-spring">ETH Robotics, Vision, and Controls Talk Series</a>.</li></h6>
-			<h6> <li>High-Fidelity Human Pose Tracking and Realistic Motion Synthesis in Real-World Scenes, <a href="https://sgmig.hosting.acm.org/mig-2024/">Keynote at ACM MIG'24</a>.</li></h6>
-			<h6> <li>Human Pose Tracking and Controllable Motion Generation, <a href="https://s3dsgr.github.io/">ECCV'24 workshop on Scalable 3D Scene Generation and Geometric Scene Understanding</a>.</li></h6>
-			<h6> <li>Efficient Creation of Photo-realistic Controllable Human Characters, <a href="https://nvvw.github.io/">CVPR'24 workshop on The 1st Workshop on Neural Volumetric Video</a>.</li></h6>
-			<h6> <li>Tracking and Segmentation for Non-Static Scene Reconstruction, <a href="https://kaldir.vc.in.tum.de/scannetpp/cvpr2024">CVPR'24 Workshop on ScanNet++ </a>.</li></h6>
-			<h6> <li>Generalized 3D Reconstruction, <a href="https://sites.google.com/view/xrnerf/">CVPR'24 Workshop on XRNeRF: Second Workshop on Advances in Radiance Fields for the Metaverse</a>.</li></h6>
-			<h6> <li>Generalized 3D Reconstruction, <a href="https://3dvconf.github.io/2024/schedule/">Keynote at 3DV 2024</a> <a href="https://www.youtube.com/live/5B260Bd9Hkg?si=emG4Gnf675vT_nmG&t=590">[Recording]</a>.</li></h6>
-			<h6> <li>Reconstruction of 3D Real-world Scenes, <a href="https://neural-fields.xyz/">ICCV'23 Workshop on NeRF4ADR: Neural Fields for Autonomous Driving and Robotics</a>.</li></h6>
-			<h6> <li>Neural Representations of 3D Real-world Scenes, <a href="https://sites.google.com/view/ropem/">IROS'23 Workshop on Robotic Perception and Mapping</a>.</li></h6>
-			<h6> <li>Neural Representation and Neural Rendering of 3D Real-world Scenes, Toronto Geometry Colloquium <a href="https://www.youtube.com/live/i9KSa8DX56E?feature=share">[Recording]</a>.</li></h6>
-			<h6> <li>New Methods for Reconstruction and Rendering of 3D Real-world Scenes, GAMES Webinar <a href="https://www.bilibili.com/video/BV1NP411M7zq/">[Recording (Chinese)]</a>.</li></h6>
-			
-			<br>
-    </section>
-    <!-- / education -->
 
 
     <div style="width:90%;height:1px;margin:0px auto;padding:1px;background-color:#D5D5D5;overflow:hidden;"></div>
