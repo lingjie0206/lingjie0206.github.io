@@ -1951,6 +1951,14 @@ hr, .border-color {
   transition: all .2s linear;
 }
 
+.right-img {
+  float: right;
+  width: 380px;      
+  height: auto;
+  margin-left: 30px; 
+  margin-bottom: 30px;
+}
+
 .hovereffect-title h6, .hovereffect-title h5 {
   color: white;
   background: transparent;
